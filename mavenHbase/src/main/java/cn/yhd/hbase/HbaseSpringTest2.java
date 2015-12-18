@@ -98,24 +98,24 @@ public class HbaseSpringTest2 {
 	 * @return
 	 */
 	public Map<String,String> getRow(String table, String rowKey){
-		Map<String,String> hmap =  htemplate.get(table, rowKey, new RowMapper<Map<String,String>>() {
-
-			public Map<String,String> mapRow(Result result, int rowNum)
-					throws Exception {
-				Map<String,String> map = new HashMap<String,String>();
-				List<Cell> listCells = result.listCells();
-				if(listCells != null && listCells.size()>0){
-					for (Cell cell : listCells) {
-						String key = Bytes.toString(cell.getQualifierArray(), cell.getQualifierOffset(), cell.getQualifierLength());
-						String value = Bytes.toString(cell.getValueArray(), cell.getValueOffset(), cell.getValueLength());
-						map.put(key, value);
-					}
-				}
-				return map;
-			}
-			
-		});
-		return hmap;
+//		Map<String,String> hmap =  htemplate.get(table, rowKey, new RowMapper<Map<String,String>>() {
+//
+//			public Map<String,String> mapRow(Result result, int rowNum)
+//					throws Exception {
+//				Map<String,String> map = new HashMap<String,String>();
+//				List<Cell> listCells = result.listCells();
+//				if(listCells != null && listCells.size()>0){
+//					for (Cell cell : listCells) {
+//						String key = Bytes.toString(cell.getQualifierArray(), cell.getQualifierOffset(), cell.getQualifierLength());
+//						String value = Bytes.toString(cell.getValueArray(), cell.getValueOffset(), cell.getValueLength());
+//						map.put(key, value);
+//					}
+//				}
+//				return map;
+//			}
+//			
+//		});
+		return null;
 	}
 	
 //	/**
