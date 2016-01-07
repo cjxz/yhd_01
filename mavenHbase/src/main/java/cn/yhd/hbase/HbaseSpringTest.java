@@ -16,6 +16,7 @@ import org.apache.hadoop.hbase.client.HBaseAdmin;
 import org.apache.hadoop.hbase.client.HTableInterface;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
@@ -78,6 +79,7 @@ public class HbaseSpringTest {
 	@Test
 	public void aaa(){
 		String hbaseKey = "2015-09-24 11:09:07_水电装修.txt";
+		Scan scan = new Scan();
 		byte[] result = htemplate.get("documentContentTable", hbaseKey, new RowMapper<byte[]>() {
 			@Override
 			public byte[] mapRow(Result result, int arg1) throws Exception {
